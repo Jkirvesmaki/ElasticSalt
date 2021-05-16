@@ -14,24 +14,18 @@
 #
 # Use a descriptive name for your cluster:
 #
-cluster.name: ClusterName 
+cluster.name: my-cluster
 #
 # ------------------------------------ Node ------------------------------------
 #
 # Use a descriptive name for the node:
 #
-node.name: node-1
+#node.name: node-1
 #
 # Add custom attributes to the node:
 #
 #node.attr.rack: r1
-#------------------------------------CORS ---------------------------------------
 #
-http.cors.enabled: true
-http.cors.allow-origin: "*"
-http.cors.allow-methods: GET,PUT,DELETE
-http.cors.allow-headers: X-Requested-With,X-Auth-Token,Content-Type,Content-Lenght
-
 # ----------------------------------- Paths ------------------------------------
 #
 # Path to directory where to store the data (separate multiple locations by comma):
@@ -59,15 +53,21 @@ path.logs: /var/log/elasticsearch #path for elasticsearch logs
 # By default Elasticsearch is only accessible on localhost. Set a different
 # address here to expose this node on the network:
 #
-network.host: 0.0.0.0
+#network.host: 192.168.0.1
 #
 # By default Elasticsearch listens for HTTP traffic on the first free port it
 # finds starting at 9200. Set a specific HTTP port here:
 #
 #http.port: 9200
-
-discovery.seed_hosts: 46.101.128.190 #set your servers IP address here. Change the port above if you are using 
-#a port other than 9200
+#
+# For more information, consult the network module documentation.
+#
+# --------------------------------- Discovery ----------------------------------
+#
+# Pass an initial list of hosts to perform discovery when this node is started:
+# The default list of hosts is ["127.0.0.1", "[::1]"]
+#
+#discovery.seed_hosts: ["host1", "host2"]
 #
 # Bootstrap the cluster using an initial set of master-eligible nodes:
 #
